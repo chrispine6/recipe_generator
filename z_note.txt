@@ -1,0 +1,43 @@
+this is docmumentation for how this project works
+
+- the website has a user databaaes
+- there are a set number of ingredients- organised as tags
+- there are also a set number of recipies, that are linked to these tags
+- when a number of tags are selected, the webite should diaplay a recie with these tags
+
+for this we need the following models
+1. a user model
+2. ingredients model
+3. recipe model
+
+middlewares needed
+1. authentication (username password match)
+2. search (search the database)
+
+routes needed
+1. auth routes (login log out)
+2. home routes (leadss to search page)
+3. search routes (looks for recipes and renders them)
+
+templates
+1. landing page (show information about the website)
+2. auth page (login and log out)
+3. at the home page (display all ingredients)
+
+the following were the ingredients used
+1. vegitables
+    1. spinach
+    2. carrots
+    3. brocoli
+    4. garlic
+    5. brussel sprouts
+    6. kale
+    7. green peas
+    8. swis chard
+    9. beets
+    10. asparagus
+2. meats and eggs
+    1. chicken
+    2. mutton
+    3. fish
+    4. eggs

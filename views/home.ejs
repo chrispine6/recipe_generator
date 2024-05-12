@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - RecipeMaster</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .title {
+      font-size: 3em; /* Increase the size of the title */
+    }
+    .ingredient-table th, .ingredient-table td {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center title">RECIPEMASTER</h1>
+    <form action="/search/results" method="POST">
+      <div class="form-group">
+        <label for="ingredients">Select Ingredients:</label>
+        <table class="table table-bordered ingredient-table">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Ingredient</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% ingredients.forEach(ingredient => { %>
+              <tr>
+                <td><input type="checkbox" name="ingredients[]" value="<%= ingredient._id %>"></td>
+                <td><%= ingredient.name %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Search Recipes</button>
+    </form>
+    <div class="text-center mt-3">
+      <a href="/logout" class="btn btn-danger">Logout</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results - RecipeMaster</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Recipe Search Results</h1>
+    <% if (recipes.length > 0) { %>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Recipe Name</th>
+            <th>Ingredients</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% recipes.forEach(recipe => { %>
+            <tr>
+              <td><%= recipe.name %></td>
+              <td><%= recipe.ingredients.map(ingredient => ingredient.name).join(', ') %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p class="text-center">No recipes found for the selected ingredients.</p>
+    <% } %>
+    <div class="text-center mt-3">
+      <a href="/home" class="btn btn-primary">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

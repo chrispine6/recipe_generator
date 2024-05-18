@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Results - RecipeMaster</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .container {
+      border: 1px solid #333;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .table {
+      background-color: #242424;
+      border-color: #333;
+    }
+    .table th, .table td {
+      border-color: #333;
+      color: #ffffff;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    a {
+      color: #00bfff; /* Light blue for links to make them stand out */
+    }
+  </style>
 </head>
 <body>
   <div class="container mt-5">
@@ -20,7 +50,7 @@
         <tbody>
           <% recipes.forEach(recipe => { %>
             <tr>
-              <td><%= recipe.name %></td>
+              <td><a href="/search/recipes/<%= recipe._id %>"><%= recipe.name %></a></td>
               <td><%= recipe.ingredients.map(ingredient => ingredient.name).join(', ') %></td>
             </tr>
           <% }) %>

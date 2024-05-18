@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= recipe.name %> - RecipeMaster</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .container {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><%= recipe.name %></h1>
+    <img src="/path/to/image/<%= recipe._id %>.jpg" alt="<%= recipe.name %>">
+    <h3>Ingredients</h3>
+    <ul>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <li><%= ingredient.name %></li>
+      <% }) %>
+    </ul>
+    <h3>Recipe</h3>
+    <p><%= recipe.description %></p>
+    <div class="text-center">
+      <a href="/home" class="btn btn-primary">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

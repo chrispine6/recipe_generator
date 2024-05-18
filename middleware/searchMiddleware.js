@@ -7,13 +7,13 @@ module.exports.searchRecipes = async (req, res, next) => {
 
   try {
     const recipes = await Recipe.find({
-      ingredients: { $all: ingredients }
-    });
+      'ingredients.name': { $in: ingredients }
+    }).populate('ingredients');
 
     req.recipes = recipes;
     next();
   } catch (err) {
     console.error(err);
-    res.redirect('/search');
+    res.redirect('/search');  // Ensure this is a valid route, or maybe redirect to '/home'?
   }
 };

@@ -9,7 +9,11 @@ const recipeSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Ingredient',
     required: true
-  }]
+  }],
+  description: {
+    type: String,
+    required: true
+  }
 });
 
 module.exports = mongoose.model('Recipe', recipeSchema);

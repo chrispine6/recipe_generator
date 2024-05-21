@@ -1,19 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RecipeMaster</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeMaster</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .jumbotron {
+            background-image: url('https://source.unsplash.com/random/1920x1080/?food,cooking');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .jumbotron h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .jumbotron p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature {
+            padding: 3rem 0;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="container text-center mt-5">
-    <h1>RECIPEMASTER</h1>
-    <p class="lead">Discover and create recipes based on the ingredients you have.</p>
-    <div class="mt-4">
-      <a href="/register" class="btn btn-primary">Register</a>
-      <a href="/login" class="btn btn-secondary">Login</a>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>RECIPEMASTER</h1>
+            <p class="lead">Discover and create recipes based on the ingredients you have.</p>
+            <div class="mt-4">
+                <a href="/register" class="btn btn-light btn-lg">Register</a>
+                <a href="/login" class="btn btn-outline-light btn-lg">Login</a>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About RecipeMaster</h2>
+                <p>RecipeMaster is a revolutionary platform that helps you discover and create delicious recipes based on the ingredients you have at home. Say goodbye to food waste and hello to culinary adventures!</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://source.unsplash.com/random/600x400/?kitchen" class="img-fluid rounded" alt="Kitchen">
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-dark py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature text-center">
+                        <i class="fas fa-utensils feature-icon"></i>
+                        <h3>Recipe Discovery</h3>
+                        <p>Enter the ingredients you have, and RecipeMaster will suggest delicious recipes you can make with them.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature text-center">
+                        <i class="fas fa-book-open feature-icon"></i>
+                        <h3>Recipe Creation</h3>
+                        <p>Can't find the perfect recipe? Use our intuitive recipe creator to craft your own culinary masterpiece.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature text-center">
+                        <i class="fas fa-bookmark feature-icon"></i>
+                        <h3>Favorites and Meal Planning</h3>
+                        <p>Save your favorite recipes and plan your meals with our convenient meal planning feature.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

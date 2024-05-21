@@ -62,7 +62,9 @@ recipes included
 
 website changes
 
-1. change login page
-2. change theme + more pictures
-3. more ingredients and recipes
-4. note tests
+1. change login page                [ DONE ]
+2. change theme + more pictures     [ Done ]
+3. more ingredients and recipes     [ INCOMPLETE ]
+4. note tests                       [ WILL DO ]
+5. like button                      [ INCOMPLETE ]
+6. search                           [ INCOMPLETE ]

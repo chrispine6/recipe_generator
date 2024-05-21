@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= recipe.name %> - RecipeMaster</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #121212;
-      color: #ffffff;
-    }
-    .container {
-      background-color: #1e1e1e;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-    img {
-      width: 100%;
-      border-radius: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= recipe.name %> - RecipeMaster</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .ingredient-img {
+            width: 50px; /* Set the width to a smaller size */
+            height: 50px; /* Set the height to maintain aspect ratio */
+            border-radius: 5px; /* Optional: Adds a small border radius to the images */
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1><%= recipe.name %></h1>
-    <img src="/path/to/image/<%= recipe._id %>.jpg" alt="<%= recipe.name %>">
-    <h3>Ingredients</h3>
-    <ul>
-      <% recipe.ingredients.forEach(ingredient => { %>
-        <li><%= ingredient.name %></li>
-      <% }) %>
-    </ul>
-    <h3>Recipe</h3>
-    <p><%= recipe.description %></p>
-    <div class="text-center">
-      <a href="/home" class="btn btn-primary">Back to Home</a>
+    <div class="container">
+        <h1><%= recipe.name %></h1>
+        <img src="/recipes/<%= recipe.name %>.jpg" alt="<%= recipe.name %>">
+        <h3>Ingredients</h3>
+        <ul>
+            <% recipe.ingredients.forEach(ingredient => { %>
+            <li>
+                <%= ingredient.name %>
+                <img class="ingredient-img" src="/ingredients/<%= ingredient.name %>.jpg" alt="<%= ingredient.name %>">
+            </li>
+            <% }) %>
+        </ul>
+        <h3>Recipe</h3>
+        <p><%= recipe.description %></p>
+        <h4>Steps</h4>
+        <ol>
+            <% recipe.steps.forEach(step => { %>
+            <li><%= step %></li>
+            <% }) %>
+        </ol>
+        <div class="text-center">
+            <a href="/home" class="btn btn-primary">Back to Home</a>
+        </div>
     </div>
-  </div>
 </body>
 </html>

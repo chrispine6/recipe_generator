@@ -14,6 +14,6 @@ module.exports.searchRecipes = async (req, res, next) => {
     next();
   } catch (err) {
     console.error(err);
-    res.redirect('/search');  // Ensure this is a valid route, or maybe redirect to '/home'?
+    res.redirect('/search');
   }
 };

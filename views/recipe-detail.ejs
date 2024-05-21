@@ -21,43 +21,40 @@
             border-radius: 10px;
         }
         .ingredient-img {
-            width: 50px; /* Set the width to a smaller size */
-            height: 50px; /* Set the height to maintain aspect ratio */
-            border-radius: 5px; /* Optional: Adds a small border radius to the images */
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
         }
-        .btn-primary {
+        .btn-primary, .btn-success {
             background-color: #007bff;
             border-color: #007bff;
         }
-        .btn-primary:hover {
+        .btn-primary:hover, .btn-success:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1><%= recipe.name %></h1>
-        <img src="/recipes/<%= recipe.name %>.jpg" alt="<%= recipe.name %>">
-        <h3>Ingredients</h3>
-        <ul>
-            <% recipe.ingredients.forEach(ingredient => { %>
-            <li>
-                <%= ingredient.name %>
-                <img class="ingredient-img" src="/ingredients/<%= ingredient.name %>.jpg" alt="<%= ingredient.name %>">
-            </li>
-            <% }) %>
-        </ul>
-        <h3>Recipe</h3>
-        <p><%= recipe.description %></p>
-        <h4>Steps</h4>
-        <ol>
-            <% recipe.steps.forEach(step => { %>
-            <li><%= step %></li>
-            <% }) %>
-        </ol>
-        <div class="text-center">
-            <a href="/home" class="btn btn-primary">Back to Home</a>
-        </div>
+  <div class="container">
+    <h1><%= recipe.name %></h1>
+    <img src="/recipes/<%= recipe.name %>.jpg" alt="<%= recipe.name %>">
+    <h3>Ingredients</h3>
+    <ul>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <li><%= ingredient.name %></li>
+      <% }) %>
+    </ul>
+    <h3>Recipe</h3>
+    <p><%= recipe.description %></p>
+    <h4>Steps</h4>
+    <ol>
+      <% recipe.steps.forEach(step => { %>
+        <li><%= step %></li>
+      <% }) %>
+    </ol>
+    <div class="text-center">
+      <a href="/home" class="btn btn-primary">Back to Home</a>
     </div>
+  </div>
 </body>
 </html>

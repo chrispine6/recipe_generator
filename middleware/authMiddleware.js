@@ -1,10 +1,8 @@
-// /middleware/authMiddleware.js
-
-module.exports.ensureAuthenticated = (req, res, next) => {
-  console.log('Session user ID:', req.session.userId);
-  if (req.session.userId) {
-    return next();
+// In middleware/authMiddleware.js
+module.exports = function isAuthenticated(req, res, next) {
+  if (!req.user) {  // Assuming `req.user` is populated by some authentication process
+    res.status(401).send('User not authenticated');
   } else {
-    res.redirect('/login');
+    next();
   }
 };

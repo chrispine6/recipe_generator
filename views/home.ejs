@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - RecipeMaster</title>
+    <title>Home - Recipe Scout</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
@@ -27,7 +27,7 @@
         .title {
             font-size: 3em;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 10px; 
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -35,7 +35,7 @@
         .form-group label {
             color: #ffffff;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             display: block;
         }
 
@@ -61,7 +61,7 @@
             vertical-align: middle;
         }
 
-        .btn {
+        .btn, .input {
             display: inline-block;
             padding: 10px 20px;
             border-radius: 5px;
@@ -71,13 +71,13 @@
             transition: background-color 0.3s ease;
         }
 
-        .btn-primary {
+        .btn-primary, .input-primary {
             background-color: #007bff;
             border: none;
             cursor: pointer;
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover, .input-primary:hover {
             background-color: #0056b3;
         }
 
@@ -90,11 +90,37 @@
         .btn-danger:hover {
             background-color: #c82333;
         }
+
+        .search-bar {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 70%;
+            padding: 8px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">RECIPEMASTER</h1>
+        <h1 class="title">Recipe Scout</h1>
+        
+        <div class="search-bar">
+            <form action="https://www.google.com/search" method="GET">
+                <div class="form-group">
+                    <label for="q">For more recipes:</label>
+                    <input type="text" name="q" id="q" class="input input-primary" placeholder="Search Google">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+
         <form action="/search/results" method="POST">
             <div class="form-group">
                 <label for="ingredients">Select Ingredients:</label>
@@ -119,6 +145,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Search Recipes</button>
         </form>
+
         <div class="mt-3 text-center">
             <a href="/logout" class="btn btn-danger">Logout</a>
         </div>
